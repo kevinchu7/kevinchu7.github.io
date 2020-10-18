@@ -32,7 +32,7 @@
   </entry>
   <entry>
     <title>jsDelivr+GitHub+PicGo搭建免费图床</title>
-    <url>/2020/09/15/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/</url>
+    <url>/2020/09/15/FigureBed/</url>
     <content><![CDATA[<h2 id="一、概念简介"><a href="#一、概念简介" class="headerlink" title="一、概念简介"></a>一、概念简介</h2><h3 id="1-图床"><a href="#1-图床" class="headerlink" title="1.图床"></a>1.图床</h3><blockquote>
 <p>图床一般是指储存图片的服务器，有国内和国外之分。国外的图床由于有空间距离等因素决定访问速度很慢影响图片显示速度。国内也分为单线空间、多线空间和cdn加速三种。简而言之，就是能提供一些可以把图片存放到网上并且引用到其他网站使用的服务。</p>
 </blockquote>
