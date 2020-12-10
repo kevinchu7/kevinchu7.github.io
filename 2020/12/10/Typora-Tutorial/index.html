@@ -1,0 +1,524 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Typora使用教程 | Kevin's Blog</title><meta name="description" content="Typora是什么？Typora是什么？Typora是一款Markdown编辑器。我觉得这就是一个神器，小巧而精悍，不管是写博客还是做笔记，它太好用了! Markdown是什么？Markdown是一种轻量级标记语言，创始人是约翰·格鲁伯（John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。由于Markdown的轻量化、易读易写特性，"><meta name="keywords" content="Typora,Markdown"><meta name="author" content="Kevin,1063995931@qq.com"><meta name="copyright" content="Kevin"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://www.kevinchu.top/2020/12/10/Typora-Tutorial/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="article"><meta property="og:title" content="Typora使用教程"><meta property="og:url" content="http://www.kevinchu.top/2020/12/10/Typora-Tutorial/"><meta property="og:site_name" content="Kevin's Blog"><meta property="og:description" content="Typora是什么？Typora是什么？Typora是一款Markdown编辑器。我觉得这就是一个神器，小巧而精悍，不管是写博客还是做笔记，它太好用了! Markdown是什么？Markdown是一种轻量级标记语言，创始人是约翰·格鲁伯（John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。由于Markdown的轻量化、易读易写特性，"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/KevinChu1998/FigureBed/BlogPic/base017.jpg"><meta property="article:published_time" content="2020-12-10T14:53:57.000Z"><meta property="article:modified_time" content="2020-12-10T17:08:41.375Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.0.2',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-12-11 01:08:41'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 5.0.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/icon01s.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">8</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">11</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 关于</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/aboutsite/"><i class="fa-fw fas fa-star"></i><span> 关于本站</span></a></li><li><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-user"></i><span> 关于我</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-paper-plane"></i><span> 更多</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://tool.lu/"><i class="fa-fw fas fa-cog"></i><span> 工具箱</span></a></li></ul></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Typora%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">Typora是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Typora%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F-1"><span class="toc-number">1.1.</span> <span class="toc-text">Typora是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">Markdown是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">HTML是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">CSS是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BA%92%E5%85%B3%E7%B3%BB"><span class="toc-number">1.5.</span> <span class="toc-text">相互关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8Typora"><span class="toc-number">2.</span> <span class="toc-text">为什么要使用Typora?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%80%E8%A7%81%E5%8D%B3%E6%89%80%E5%BE%97"><span class="toc-number">2.1.</span> <span class="toc-text">所见即所得</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%85%BC%E5%AE%B9%E6%80%A7%E5%BC%BA"><span class="toc-number">2.2.</span> <span class="toc-text">网站兼容性强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%8E%E8%A7%82"><span class="toc-number">2.3.</span> <span class="toc-text">美观</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E4%BA%BA%E8%AE%A2%E5%88%B6"><span class="toc-number">2.4.</span> <span class="toc-text">私人订制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8D%E8%B4%B9"><span class="toc-number">2.5.</span> <span class="toc-text">免费</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8Typora%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">怎么使用Typora？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Typora%E7%95%8C%E9%9D%A2%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.1.</span> <span class="toc-text">Typora界面介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE-%E8%AF%AD%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">常用快捷键&#x2F;语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="toc-number">3.3.</span> <span class="toc-text">特殊字符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A"><span class="toc-number">4.</span> <span class="toc-text">更多</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/KevinChu1998/FigureBed/BlogPic/base017.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Kevin's Blog</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 关于</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/aboutsite/"><i class="fa-fw fas fa-star"></i><span> 关于本站</span></a></li><li><a class="site-page" href="/aboutme/"><i class="fa-fw fas fa-user"></i><span> 关于我</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-paper-plane"></i><span> 更多</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://tool.lu/"><i class="fa-fw fas fa-cog"></i><span> 工具箱</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Typora使用教程</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-10T14:53:57.000Z" title="发表于 2020-12-10 22:53:57">2020-12-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-10T17:08:41.375Z" title="更新于 2020-12-11 01:08:41">2020-12-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/">实用软件</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="Typora是什么？"><a href="#Typora是什么？" class="headerlink" title="Typora是什么？"></a>Typora是什么？</h2><h3 id="Typora是什么？-1"><a href="#Typora是什么？-1" class="headerlink" title="Typora是什么？"></a>Typora是什么？</h3><p>Typora是一款Markdown编辑器。<br>我觉得这就是一个神器，小巧而精悍，不管是写博客还是做笔记，它太好用了!<br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/KevinChu1998/FigureBed/BlogPic/blog20201210_typora_005.png"></p>
+<h3 id="Markdown是什么？"><a href="#Markdown是什么？" class="headerlink" title="Markdown是什么？"></a>Markdown是什么？</h3><p>Markdown是一种轻量级标记语言，创始人是约翰·格鲁伯（John Gruber）。它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。由于Markdown的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，目前许多网站都广泛使用Markdown来撰写帮助文档或是用于论坛上发表消息。</p>
+<p>所谓：阴阳相生。有轻就有重，有轻量级标记语言，就会“重量级”标记语言。Word就是一款大家熟知的“重量级”标记语言编辑器，专有名词是富文本编辑器。在Markdown编辑器被发明之前，大家都是在使用富文本编辑器。Typora是一款Markdown编辑器，Word是一款富文本编辑器，二者的区别到底是什么呢？我们之前使用富文本编辑器，非常好用啊，为什么还需要Markdown呢？这是学习Markdown的人都会遇到的问题，现以Typora和Word为例，说说Markdown编辑器和富文本编辑器的区别：</p>
+<blockquote>
+<p>Markdown编辑器（Typora）和富文本编辑器（Word）<br>1.功能：Typora ≈ &lt; Word<br>由于我们熟悉Word，对Typora了解不多，数量掌握，所以感觉上Word功能强大，其实，数量掌握Typora，能实现的功能并不比Word少。</p>
+<p>2.使用难度：Typora&gt;Word<br>Word一般通过点击、右键等操作即可使用，而Typora则需要额外掌握一套标记语言，使用难度方面Typora要难于Word。</p>
+<p>3.使用投入度：Typora&gt;Word<br>使用Word的时候，需要频繁地点击工具栏，就会影响写作的投入度；而使用Typora，基本上通过文本的输入就能实现写作和排版。</p>
+<p>4.兼容性：Typora&gt;Word<br>对于互联网写作的人来说，这一点十分重要。<br>Word文档用其他软件打开经常出现乱码，而Markdown本身就有文本写成，是一套完整的标记语言，在各支持Markdown的网站之间交流方便，兼容性强，即使是用非Markdown编辑器打开，也不会出现明显的乱码。</p>
+<p>5.直观性：Typora&gt;Word<br>在直观性方面，Typora在Markdown编辑器中已经是佼佼者了，当然和Word相比，直观性仍然会稍逊一筹。</p>
+<p>6.总结：</p>
+<ul>
+<li><p>Typora等Markdown编辑器适用于互联网写作，而Word等富文本编辑器适用于工作等非互联网场景；</p>
+</li>
+<li><p>Markdown编辑器适用于具有一定互联网技术的人群，富文本编辑器更适用于普通大众；</p>
+</li>
+<li><p>正是因为有一定的门槛，从使用人数来说，富文本编辑器的使用人数更多，但使用人数多并不代表一定好，比如，使用安卓系统手机的人比使用苹果IOS手机的人多，但并不代表安卓系统手机就更好。二者并没有高下之分，只是擅长的领域、适应人群不同而已。但有一点需要说明的是，对于已掌握Typora的人来说，就一定会喜欢上Typora；就像使用过iPhone的人，很难再返回使用安卓手机一样。</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="HTML是什么？"><a href="#HTML是什么？" class="headerlink" title="HTML是什么？"></a>HTML是什么？</h3><p>HTML（英文全称是Hyper Text Markup Language，中文全称是超文本标记语言）是一种标记性语言。所谓超文本，顾名思义就是除了文字，还可以包含图形、动画、声音、链接等非文字元素。</p>
+<p>本质上，HTML和我们日常交流的语言没有什么区别，不同点在于：自然语言是人与人之间交流的语言，而HTML是人与浏览器之间交流的语言。也就是说，通过HTML命令告诉浏览器，在网页的哪个位置，放置什么控件，而控件长啥样，具体有什么功能，则分别需要CSS和Javascript来实现。</p>
+<h3 id="CSS是什么？"><a href="#CSS是什么？" class="headerlink" title="CSS是什么？"></a>CSS是什么？</h3><p>CSS（英文全称：Cascading Style Sheets，中文全称：层叠样式表）是一种用来表现HTML或XML等文件样式的计算机语言。CSS 能够对网页中元素位置的排版进行像素级精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力。</p>
+<p>JavaScript（简称：JS）是一种直译式高级脚本语言，常用来为网页添加各式各样的复杂动态功能，为用户提供更流畅美观的浏览效果。通常JavaScript脚本是通过嵌入在HTML中来实现自身的功能的。</p>
+<h3 id="相互关系"><a href="#相互关系" class="headerlink" title="相互关系"></a>相互关系</h3><p>简单梳理下以上几者的关系：</p>
+<blockquote>
+<ol>
+<li>Typora是一款Markdown编辑器。</li>
+<li>Markdown和HTML都是标记语言，不同点在于，Markdown是文本语言，HTML除了文字，还可以包含图形、动画、声音、链接等非文字元素。</li>
+<li>Markdown适用于互联网写作，HTML则不能直接用于写作，Markdown通过CSS可以转化为HTML。我们所看到的各种Markdown编辑器显示的样式都是转换为HTML后加上CSS显示的。</li>
+<li>HTML加上CSS、Javascript呈现出我们最终看到的网页。</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="为什么要使用Typora"><a href="#为什么要使用Typora" class="headerlink" title="为什么要使用Typora?"></a>为什么要使用Typora?</h2><h3 id="所见即所得"><a href="#所见即所得" class="headerlink" title="所见即所得"></a>所见即所得</h3><p>这个太方便了,也支持和源代码来回切换.</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/KevinChu1998/FigureBed/BlogPic/blog20201210_typora_001.png"></p>
+<h3 id="网站兼容性强"><a href="#网站兼容性强" class="headerlink" title="网站兼容性强"></a>网站兼容性强</h3><p>这一点是将Typora从与其他Word之类的富文本编辑器中脱颖而出的主要原因。</p>
+<p>正因为以上两点，让Typora称为互联网写作的首选。</p>
+<h3 id="美观"><a href="#美观" class="headerlink" title="美观"></a>美观</h3><p>不用多说，简约而大气 。</p>
+<h3 id="私人订制"><a href="#私人订制" class="headerlink" title="私人订制"></a>私人订制</h3><p>提供多款主题，还有主题商店可供挑选 。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/KevinChu1998/FigureBed/BlogPic/blog20201210_typora_002.png"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/KevinChu1998/FigureBed/BlogPic/blog20201210_typora_003.png"></p>
+<h3 id="免费"><a href="#免费" class="headerlink" title="免费"></a>免费</h3><p>哈哈，这么好用的软件还能免费，简直太香了。</p>
+<hr>
+<h2 id="怎么使用Typora？"><a href="#怎么使用Typora？" class="headerlink" title="怎么使用Typora？"></a>怎么使用Typora？</h2><h3 id="Typora界面介绍"><a href="#Typora界面介绍" class="headerlink" title="Typora界面介绍"></a>Typora界面介绍</h3><p>很强大，却又很简单，极易上手。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/KevinChu1998/FigureBed/BlogPic/blog20201210_typora_004.png"></p>
+<h3 id="常用快捷键-语法"><a href="#常用快捷键-语法" class="headerlink" title="常用快捷键/语法"></a>常用快捷键/语法</h3><table>
+<thead>
+<tr>
+<th align="left">功能</th>
+<th align="left">快捷键/语法</th>
+<th align="center">效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">加粗</td>
+<td align="left">Ctrl+B 或者 <code>**加粗**</code> 或者 <code>__加粗__</code></td>
+<td align="center"><strong>加粗</strong></td>
+</tr>
+<tr>
+<td align="left">斜体</td>
+<td align="left">Ctrl+I 或者 <code>*斜体*</code> 或者 <code>_斜体_</code></td>
+<td align="center"><em>斜体</em></td>
+</tr>
+<tr>
+<td align="left">加粗且斜体</td>
+<td align="left"><code>***加粗且斜体***</code> 或者 <code>___加粗且斜体___</code></td>
+<td align="center"><strong><em>加粗且斜体\</em></strong></td>
+</tr>
+<tr>
+<td align="left">下划线</td>
+<td align="left">Ctrl+U 或者 <code>&lt;u&gt;下划线&lt;/u&gt;</code></td>
+<td align="center">下划线</td>
+</tr>
+<tr>
+<td align="left">删除线</td>
+<td align="left">Alt+Shift+5 或者 <code>~~删除线~~</code></td>
+<td align="center">删除线</td>
+</tr>
+<tr>
+<td align="left">水平分割线</td>
+<td align="left"><code>***</code> 或者 <code>- - -</code> 或者 <code>_ _ _</code></td>
+<td align="center">—</td>
+</tr>
+<tr>
+<td align="left">高亮</td>
+<td align="left"><code>==高亮==</code></td>
+<td align="center">高亮</td>
+</tr>
+<tr>
+<td align="left">下标</td>
+<td align="left"><code>~下标~</code></td>
+<td align="center">下标2</td>
+</tr>
+<tr>
+<td align="left">上标</td>
+<td align="left"><code>^上标^</code></td>
+<td align="center">上标2</td>
+</tr>
+<tr>
+<td align="left">注释</td>
+<td align="left"><code>[^注释1]</code></td>
+<td align="center">注释注释1</td>
+</tr>
+<tr>
+<td align="left">代码</td>
+<td align="left">Ctrl+Shift+` 或者 ``</td>
+<td align="center"><code>代码</code></td>
+</tr>
+<tr>
+<td align="left">选中一行</td>
+<td align="left">Ctrl+L</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">选中一个单词</td>
+<td align="left">Ctrl+D</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">选中相同格式的文字</td>
+<td align="left">Ctrl+E</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">生成目录</td>
+<td align="left"><code>[TOC]</code></td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">一级标题</td>
+<td align="left">Ctrl+1 或者 #+空格+文字</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">二级标题</td>
+<td align="left">Ctrl+2 或者 ##+空格+文字</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">三级标题</td>
+<td align="left">Ctrl+3 或者 ###+空格+文字</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">四级标题</td>
+<td align="left">Ctrl+4 或者 ####+空格+文字</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">五级标题</td>
+<td align="left">Ctrl+5 或者 #####+空格+文字</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">六级标题</td>
+<td align="left">Ctrl+6 或者 ######+空格+文字</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">返回顶部</td>
+<td align="left">Ctrl+Home</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">返回底部</td>
+<td align="left">Ctrl+End</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">创建表格</td>
+<td align="left">Ctrl+T</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">创建超链接</td>
+<td align="left">Ctrl+K 或者 <code>[链接名称](链接地址)</code></td>
+<td align="center">百度</td>
+</tr>
+<tr>
+<td align="left">搜索并替换</td>
+<td align="left">Ctrl+H</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">插入图片</td>
+<td align="left">Ctrl+Shift+I 或者 复制粘贴 或者 直接拖动 或者<code>![图片的替代文字](图片地址)</code></td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">表情</td>
+<td align="left"><code>:happy:</code> 或者 <code>:smiley:</code> 或者 <code>:cry:</code></td>
+<td align="center">😃 😄 😢</td>
+</tr>
+<tr>
+<td align="left">向右缩进</td>
+<td align="left">Tab</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">向左缩进</td>
+<td align="left">Shift+Tab</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">引言</td>
+<td align="left">Ctrl+Shift+Q 或者 &gt;+空格</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">有序列表</td>
+<td align="left">Ctrl+Shift+[ 或者 *+空格</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="left">无序列表</td>
+<td align="left">Ctrl+Shift+] 或者 *+空格</td>
+<td align="center">/</td>
+</tr>
+</tbody></table>
+<p>备注：emoji表情符号链接地址：<a target="_blank" rel="noopener" href="https://bj.96weixin.com/tools/emoji">https://bj.96weixin.com/tools/emoji</a></p>
+<h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><table>
+<thead>
+<tr>
+<th align="center">结果</th>
+<th align="center">代码</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">“</td>
+<td align="center"><code>&quot;</code></td>
+<td align="center">引号</td>
+</tr>
+<tr>
+<td align="center">‘</td>
+<td align="center"><code>&#39;</code></td>
+<td align="center">撇号</td>
+</tr>
+<tr>
+<td align="center">&amp;</td>
+<td align="center"><code>&amp;</code></td>
+<td align="center">和号</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><code> </code></td>
+<td align="center">空格</td>
+</tr>
+<tr>
+<td align="center">©</td>
+<td align="center"><code>©</code></td>
+<td align="center">版权</td>
+</tr>
+<tr>
+<td align="center">®</td>
+<td align="center"><code>®</code></td>
+<td align="center">注册商标</td>
+</tr>
+<tr>
+<td align="center">™</td>
+<td align="center"><code>™</code></td>
+<td align="center">商标（注册中）</td>
+</tr>
+<tr>
+<td align="center">±</td>
+<td align="center"><code>±</code></td>
+<td align="center">正负号</td>
+</tr>
+<tr>
+<td align="center">÷</td>
+<td align="center"><code>÷</code></td>
+<td align="center">除</td>
+</tr>
+<tr>
+<td align="center">×</td>
+<td align="center"><code>×</code></td>
+<td align="center">乘</td>
+</tr>
+<tr>
+<td align="center">°</td>
+<td align="center"><code>°</code></td>
+<td align="center">度</td>
+</tr>
+<tr>
+<td align="center">¹</td>
+<td align="center"><code>¹</code></td>
+<td align="center">上标¹</td>
+</tr>
+<tr>
+<td align="center">²</td>
+<td align="center"><code>²</code></td>
+<td align="center">上标²</td>
+</tr>
+<tr>
+<td align="center">³</td>
+<td align="center"><code>³</code></td>
+<td align="center">上标³</td>
+</tr>
+<tr>
+<td align="center">´</td>
+<td align="center"><code>´</code></td>
+<td align="center">半角引号</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center"><code>&lt;</code></td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center"><code>&gt;</code></td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center">≠</td>
+<td align="center"><code>≠</code></td>
+<td align="center">不等于</td>
+</tr>
+<tr>
+<td align="center">≤</td>
+<td align="center"><code>≤</code></td>
+<td align="center">小于等于</td>
+</tr>
+<tr>
+<td align="center">≥</td>
+<td align="center"><code>≥</code></td>
+<td align="center">大于等于</td>
+</tr>
+<tr>
+<td align="center">¥</td>
+<td align="center"><code>¥</code></td>
+<td align="center">元</td>
+</tr>
+<tr>
+<td align="center">£</td>
+<td align="center"><code>£</code></td>
+<td align="center">英镑</td>
+</tr>
+<tr>
+<td align="center">€</td>
+<td align="center"><code>€</code></td>
+<td align="center">欧元</td>
+</tr>
+<tr>
+<td align="center">¢</td>
+<td align="center"><code>¢</code></td>
+<td align="center">分</td>
+</tr>
+<tr>
+<td align="center">½</td>
+<td align="center"><code>½</code></td>
+<td align="center">二分之一</td>
+</tr>
+<tr>
+<td align="center">¼</td>
+<td align="center"><code>¼</code></td>
+<td align="center">四分之一</td>
+</tr>
+<tr>
+<td align="center">¾</td>
+<td align="center"><code>¾</code></td>
+<td align="center">四分之三</td>
+</tr>
+<tr>
+<td align="center">§</td>
+<td align="center"><code>§</code></td>
+<td align="center">章节符号</td>
+</tr>
+<tr>
+<td align="center">¦</td>
+<td align="center"><code>¦</code></td>
+<td align="center">断竖线</td>
+</tr>
+<tr>
+<td align="center">¶</td>
+<td align="center"><code>¶</code></td>
+<td align="center">段落符号</td>
+</tr>
+<tr>
+<td align="center">x²</td>
+<td align="center"><code>$x^2$</code></td>
+<td align="center">x的平方（数学公式）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>Typora官网: <a target="_blank" rel="noopener" href="https://www.typora.io/">https://www.typora.io/</a><br>主题商店: <a target="_blank" rel="noopener" href="https://theme.typora.io/">https://theme.typora.io</a></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:1063995931@qq.com">Kevin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.kevinchu.top/2020/12/10/Typora-Tutorial/">http://www.kevinchu.top/2020/12/10/Typora-Tutorial/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.kevinchu.top" target="_blank">Kevin's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Typora/">Typora</a><a class="post-meta__tags" href="/tags/Markdown/">Markdown</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/KevinChu1998/FigureBed/BlogPic/base017.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/10/17/Java/"><img class="next-cover" data-lazy-src="https://cdn.jsdelivr.net/gh/KevinChu1998/FigureBed/BlogPic/base003.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Java面试题汇总</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/KevinChu1998/FigureBed/BlogPic/base017.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By Kevin</div><div class="footer_custom_text">Hi, welcome to my <a href="https://www.kevinchu.top/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'GVgaWIGpsCIFelkh1v4mctUp-gzGzoHsz',
+      appKey: 'OeECwJIyMdVPdsyOM3OSRdn2',
+      placeholder: '欢迎分享您的想法（记得留下您的昵称和邮箱...以便快速收到回复哦）！',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><canvas class="fireworks"></canvas><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script defer="defer" id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script></div></body></html>
